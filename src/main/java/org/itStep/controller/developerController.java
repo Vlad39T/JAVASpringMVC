@@ -46,4 +46,5 @@ public class developerController {
         model.addAttribute("showDev",byPhone);
         return "developer";
     }
+
 }

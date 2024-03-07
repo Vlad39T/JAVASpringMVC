@@ -1,6 +1,7 @@
 package org.itStep.Model;
 
 public class Developer {
+
     private Integer id;
     private String pib;
     private String phone;

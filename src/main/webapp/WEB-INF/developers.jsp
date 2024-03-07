@@ -16,6 +16,8 @@
 <c:forEach var="developer" items="${dev}">
    <a href="/showDeveloper/${developer.phone}"><div>${developer.pib} </div></a>
 </c:forEach> <br>
+
 <a href="developer/form">Add developer</a>
+
 </body>
 </html>
