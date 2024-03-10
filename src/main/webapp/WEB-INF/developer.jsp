@@ -13,12 +13,13 @@
     <title>Title</title>
 </head>
 <body>
-
+<form>
 <h4>ПІБ: ${showDev.pib}</h4>
 <h4>Номер телефону: ${showDev.phone}</h4>
 <h4>Електрона пошта: ${showDev.email}</h4>
 <h4>Посилання на соціальні мережі: ${showDev.url}</h4>
 <h4>Примітки: ${showDev.notes}</h4>
-
+    <a href="${pageContext.request.contextPath}/developers">Back</a>
+</form>
 </body>
 </html>

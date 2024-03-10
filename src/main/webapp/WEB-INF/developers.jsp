@@ -13,8 +13,10 @@
 </head>
 <body>
 
-<c:forEach var="developer" items="${dev}">
-   <a href="/showDeveloper/${developer.phone}"><div>${developer.pib} </div></a>
+<c:forEach var="developer" items="${developers}">
+   <a href="/showDeveloper/${developer.id}"><div>${developer.pib} </div></a>
+    <a href="/updateInfo/developer/{idDeveloper}${developer.idDeveloper}"> Update</a>
+    <a href="/deleteInfo/developer/{idDeveloper}${developer.idDeveloper}"> Delete</a>
 </c:forEach> <br>
 
 <a href="developer/form">Add developer</a>

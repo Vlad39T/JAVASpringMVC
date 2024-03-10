@@ -1,18 +1,39 @@
 package org.itStep.Model;
 
+import org.hibernate.annotations.Entity;
+import org.hibernate.annotations.Table;
+import org.springframework.stereotype.Component;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Component
+@Entity
+@Table(appliesTo = "", inverse = true)
 public class Developer {
 
+    @Id
+    @Column(name = "id_developers")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(name = "pib")
     private String pib;
+    @Column(name = "phone")
     private String phone;
+    @Column(name = "email")
     private String email;
+    @Column(name = "url")
     private String url;
+    @Column(name = "notes")
     private String notes;
 
     public Developer() {
     }
 
-    public Developer(String pib, String phone, String email, String url, String notes) {
+    public Developer(Integer id, String pib, String phone, String email, String url, String notes) {
+        this.id = id;
         this.pib = pib;
         this.phone = phone;
         this.email = email;
@@ -20,8 +41,7 @@ public class Developer {
         this.notes = notes;
     }
 
-    public Developer(Integer id, String pib, String phone, String email, String url, String notes) {
-        this.id = id;
+    public Developer(String pib, String phone, String email, String url, String notes) {
         this.pib = pib;
         this.phone = phone;
         this.email = email;
