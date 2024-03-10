@@ -14,9 +14,10 @@
 <body>
 
 <c:forEach var="developer" items="${developers}">
-   <a href="/showDeveloper/${developer.id}"><div>${developer.pib} </div></a>
-    <a href="/updateInfo/developer/{idDeveloper}${developer.idDeveloper}"> Update</a>
-    <a href="/deleteInfo/developer/{idDeveloper}${developer.idDeveloper}"> Delete</a>
+    <div>${developer.pib} ${developer.phone}</div>
+    <a href="/showDeveloper/${developer.phone}">Info</a>
+    <a href="/update/developer/${developer.idDeveloper}"> Update</a>
+    <a href="/delete/developer/${developer.idDeveloper}"> Delete</a>
 </c:forEach> <br>
 
 <a href="developer/form">Add developer</a>

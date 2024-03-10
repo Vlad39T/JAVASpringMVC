@@ -38,8 +38,8 @@ public class developerController {
     @PostMapping("/developer/form")
     public String postDeveloperForm(@ModelAttribute Developer developer) {
         Developer developerById = null;
-        if (developer.getId() != null) {
-            developerById = developerHibernate.getById(developer.getId());
+        if (developer.getIdDeveloper() != null) {
+            developerById = developerHibernate.getById(developer.getIdDeveloper());
         }
 
         if (developerById == null) {
@@ -50,22 +50,24 @@ public class developerController {
         return "redirect:/developers";
     }
 
-    @GetMapping("/showDeveloper/{id}")
-    public String getDev(@PathVariable int id, Model model) {
-        Developer byPhone = developerHibernate.getById(id);
+
+    @GetMapping("/showDeveloper/{phone}")
+    public String getDev(@PathVariable String phone, Model model) {
+        Developer byPhone = developerHibernate.getByPhone(phone);
         model.addAttribute("showDev",byPhone);
         return "developer";
     }
 
 
-    @GetMapping("/updateInfo/developer/{idDeveloper}")
-    public String update(@PathVariable(name="idDeveloper")Integer idDeveloper, Model model){
-        Developer developerById= developerHibernate.getById(idDeveloper);
-        model.addAttribute("developer",developerById);
+    @GetMapping("/update/developer/{idDeveloper}")
+    public String update(@PathVariable(name = "idDeveloper") Integer idDeveloper, Model model) {
+        Developer developerById = developerHibernate.getById(idDeveloper);
+        model.addAttribute("developer", developerById);
         return "form";
     }
-    @GetMapping("/deleteInfo/developer/{idDeveloper}")
-    public String delete(@PathVariable(name ="idDeveloper") Integer id){
+
+    @GetMapping("/delete/developer/{idDeveloper}")
+    public String delete(@PathVariable(name = "idDeveloper") Integer id) {
         developerHibernate.delete(id);
         return "redirect:/developers";
     }

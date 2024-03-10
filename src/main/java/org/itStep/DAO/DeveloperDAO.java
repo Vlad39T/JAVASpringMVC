@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+
 public class DeveloperDAO implements BaseEntity<Developer, Integer> {
 
     List<Developer> developers = new ArrayList<>(

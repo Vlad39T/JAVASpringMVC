@@ -5,7 +5,6 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.itStep.DAO.BaseEntity;
 import org.itStep.Model.Developer;
-import org.itStep.util.HibernateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -49,7 +48,7 @@ public class DeveloperHibernate implements BaseEntity<Developer,Integer> {
         transaction.commit();
         session.close();
     }
-
+    @Override
     public List<Developer> getAll() {
         Session session = sessionFactory.openSession();
         Query<Developer> query = session.createQuery("from Developer ", Developer.class);
@@ -60,6 +59,15 @@ public class DeveloperHibernate implements BaseEntity<Developer,Integer> {
     public Developer getById(Integer id) {
         Session session = sessionFactory.openSession();
         return session.get(Developer.class, id);
+    }
+
+    public Developer getByPhone(String phone) {
+        for (Developer developer : getAll()) {
+            if (developer.getPhone().equals(phone)) {
+                return developer;
+            }
+        }
+        return null;
     }
 
 

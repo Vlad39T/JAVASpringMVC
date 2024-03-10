@@ -13,7 +13,7 @@
     <title>Title</title>
 </head>
 <body>
- <form  method="post">
+ <form action="${pageContext.request.contextPath}/developer/form" method="post">
      <label>
          <input type="text" name="pib" placeholder="Введіть ПІБ">
      </label><br>
@@ -29,7 +29,12 @@
      <label>
          <input type="text" name="notes" placeholder="Введіть примітки">
      </label><br>
-<button type="submit">Add developer</button>
+     <c:if test="${developer == null}">
+     <button type="submit">Add developer</button>
+ </c:if>
+     <c:if test="${developer != null}">
+         <button type="submit">Update developer</button>
+     </c:if>
  </form>
 </body>
 </html>
