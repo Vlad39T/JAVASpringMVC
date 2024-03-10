@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
-@Repository
 public class DeveloperDAO implements BaseEntity<Developer, Integer> {
 
     List<Developer> developers = new ArrayList<>(
@@ -40,13 +39,6 @@ developers.add(developer);
     public Developer getById(Integer integer) {
         return null;
     }
-    public Developer getByPib(String phone) {
-        for (Developer developer : developers) {
-            if (developer.getPhone().equals(phone)) {
-                return developer;
-            }
-        }
-        return null;
-    }
+
 
 }

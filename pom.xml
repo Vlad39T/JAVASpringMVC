@@ -2,14 +2,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.example</groupId>
-  <artifactId>Java31SpringMVC</artifactId>
+  <artifactId>JavaSpringMVC</artifactId>
   <packaging>war</packaging>
   <properties>
     <maven.compiler.source>19</maven.compiler.source>
     <maven.compiler.target>19</maven.compiler.target>
   </properties>
   <version>1.0-SNAPSHOT</version>
-  <name>Java31SpringMVC Maven Webapp</name>
+  <name>JavaSpringMVC Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
   <dependencies>
@@ -66,7 +66,7 @@
   </dependencies>
 
   <build>
-    <finalName>Java31SprinngMVC</finalName>
+    <finalName>JavaSpringMVC</finalName>
   </build>
 
 </project>
